@@ -1,0 +1,244 @@
+#:import Toolbar kivymd.uix.toolbar
+#:import MDTextField kivymd.uix.textfield.MDTextField
+#:import MDSeparator kivymd.uix.card.MDSeparator
+#:import MDIconButton kivymd.uix.button.MDIconButton
+#:import MDLabel kivymd.uix.label.MDLabel
+#:import MDCard kivymd.uix.card.MDCard
+#:import MDBoxLayout kivymd.uix.boxlayout.MDBoxLayout
+#:import MDGridLayout kivymd.uix.gridlayout.MDGridLayout
+
+<Musicas>:
+    canvas.before:
+        Color:
+            rgba: [0.07, 0.07, 0.07, 1] # Substitua esta linha pela cor hexadecimal #1DB954
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    name: 'musicas'
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDToolbar:
+            title: "SpotFree"
+            md_bg_color: 0.071, 0.071, 0.071, 1
+            size_hint_y: None
+            height: "56dp"
+            id: nome_playlist
+            left_action_items: [["arrow-left", lambda x: root.voltar()]]
+
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: "10dp"
+
+            MDBoxLayout:
+                padding: "10dp"
+                spacing: "10dp"
+                size_hint_y: None
+                height: "5dp"
+            MDFloatLayout:
+
+                MDLabel:
+                    text: 'Nome Playlist'
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1
+                    halign: 'center'
+                    font_size: '18dp'
+                    pos_hint: {'center_y': .98, 'center_x': .5}
+                    font_name: 'fonts/bold.otf'
+                    id: nomeplay
+    MDFloatLayout:
+        ScrollView:
+            id: scrollplaylist
+            size_hint_y: .75
+            pos_hint: {'center_x': 0.5, 'top': .82}
+            GridLayout:
+                cols: 1
+                padding: [12,12,12,2]
+                spacing: "12dp"
+                size_hint_y: None
+                height: self.minimum_height
+                adaptive_height: True
+                pos_hint: {"center_x": 0.5}
+                id: musicas
+
+                MDCard:
+                    size_hint_y: None
+                    height: '65dp'
+                    md_bg_color: get_color_from_hex('#29282B')
+                    MDFloatLayout:
+                        AsyncImage:
+                            source: "akon.png"
+                            size_hint_y: None
+                            height: '65dp'
+                            pos_hint: {'center_y': .5, 'center_x': .1}
+                        MDLabel:
+                            text: 'Titulo! da musica aqui agora das sda! dasd asd as'
+                            size_hint_x: .6
+                            halign: 'left'
+                            font_style: 'Caption'
+                            bold: True
+                            pos_hint: {'center_y': .64, 'center_x': .56}
+                            theme_text_color: "Custom"
+                            text_color: get_color_from_hex('#ffffff')
+                        MDLabel:
+                            text: 'Artista!'
+                            halign: 'left'
+                            font_style: 'Caption'
+                            pos_hint: {'center_y': .3, 'center_x': .76}
+                            theme_text_color: "Custom"
+                            text_color: get_color_from_hex('#ffffff')
+                        MDIconButton:
+                            icon: "play"
+                            pos_hint: {'center_x': .9, 'center_y': .5}
+                            theme_text_color: "Custom"
+                            text_color: get_color_from_hex('#FFFFFF')
+
+                        MDIconButton:
+                            font_size: "18sp"
+                            icon: "heart-outline"
+                            pos_hint: {'center_x': .25, 'center_y': .5}
+                            theme_text_color: "Custom"
+                            text_color: get_color_from_hex('#F70707')
+
+
+
+
+
+
+
+
+    MDFloatLayout:
+
+        ScrollView:
+            do_scroll_y: False
+            id: scroll
+            size_hint: 1, 1  # define a altura do ScrollView em relação ao seu pai
+            pos_hint: {'center_x': 0.53, 'top': 0.0}  # define a posição do ScrollView em relação ao seu pai
+
+            MDCard:
+                id: card
+                on_touch_move: root.on_touch_move(args[1])
+                size_hint: .95, .12
+                radius: [8,]
+                md_bg_color: get_color_from_hex('#1DD05D')
+
+
+                FloatLayout:
+
+                    FitImage:
+                        id: image_musica
+                        size_hint_x:.13
+                        size_hint_y:.5
+                        pos_hint: {'center_x': .08, 'center_y': .5}
+                        source: 'akon.png'
+                        allow_stretch: True
+                        keep_ratio: True
+                    MDLabel:
+                        id: nome_musica
+                        font_size: '13dp'
+                        font_name: 'fonts/bold.otf'
+                        text: 'O aplicativo está bugado!'
+                        pos_hint: {'center_x': .44, 'center_y': .63}
+                        size_hint_x: .55
+                        halign: 'left'
+                    MDLabel:
+                        id: nome_artista
+                        font_size: '13dp'
+                        font_name: 'fonts/light.otf'
+                        text: 'O aplicativo está bugado!'
+                        pos_hint: {'center_x': .44, 'center_y': .35}
+                        size_hint_x: .55
+                        halign: 'left'
+                    MDIconButton:
+                        id: play
+                        icon: "play"
+                        pos_hint: {'center_x': .92, 'center_y': .5}
+                        theme_text_color: "Custom"
+                        text_color: get_color_from_hex('#121212')
+                        on_release: root.play_stop()
+                    MDIconButton:
+                        icon: "stop"
+                        pos_hint: {'center_x': .8, 'center_y': .5}
+                        theme_text_color: "Custom"
+                        text_color: get_color_from_hex('#121212')
+                        on_release: root.stop()
+                    ProgressBar:
+
+                        id: progress_bar
+                        max: 100
+                        size_hint_x:.98
+                        pos_hint: {'center_x': .5, 'center_y': .04}
+                        on_touch_down: root.click_barra(*args)
+                        size_hint_y: .5
+
+
+    ScrollView:
+        do_scroll_y: False
+        do_scroll_y: False
+        pos_hint: {'center_x': 0.5, 'top': 0.10}  # define a posição do ScrollView em relação ao seu pai
+        MDFloatLayout:
+            MDCard:
+                md_bg_color: 0, 0, 0, 0.1
+                size_hint: 1, .14
+                pos_hint: {"center_x": .5, "center_y": .925}
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 0.9 # define a cor de fundo (preto transparente)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+
+                MDFloatLayout:
+
+                    MDIconButton:
+                        pos_hint: {"center_x": .16, "center_y": .75}
+                        icon: 'home'
+                        theme_text_color: 'Custom'
+                        text_color: get_color_from_hex('#ffffff')
+                        on_release: on_press: root.manager.transition.direction = 'left'; root.manager.current = 'inicio'
+
+                    MDLabel:
+                        pos_hint: {"center_x": .159, "center_y": .55}
+                        text: 'Início'
+                        halign: 'center'
+                        font_name: 'fonts/medium.otf'
+                        font_size: '13dp'
+                        theme_text_color: 'Custom'
+                        text_color: get_color_from_hex('#ffffff')
+
+                    MDIconButton:
+                        pos_hint: {"center_x": .5, "center_y": .75}
+                        icon: 'magnify'
+                        theme_text_color: 'Custom'
+                        text_color: get_color_from_hex('#1DB954')
+                        on_release: on_press: root.manager.transition.direction = 'left'; root.manager.current = 'pesquisar'
+
+                    MDLabel:
+                        pos_hint: {"center_x": .5, "center_y": .55}
+                        text: 'Buscar'
+                        font_size: '13dp'
+                        halign: 'center'
+                        font_name: 'fonts/medium.otf'
+                        theme_text_color: 'Custom'
+                        text_color: get_color_from_hex('#1DB954')
+
+                    MDIconButton:
+                        pos_hint: {"center_x": .84, "center_y": .75}
+                        icon: 'chip'
+                        theme_text_color: 'Custom'
+                        text_color: get_color_from_hex('#ffffff')
+
+                    MDLabel:
+                        pos_hint: {"center_x": .84, "center_y": .55}
+                        text: 'IA'
+                        font_size: '13dp'
+                        halign: 'center'
+                        font_name: 'fonts/medium.otf'
+                        theme_text_color: 'Custom'
+                        text_color: get_color_from_hex('#ffffff')
+
+
+
+
+
+

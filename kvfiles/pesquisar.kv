@@ -1,0 +1,624 @@
+#:import Toolbar kivymd.uix.toolbar
+#:import MDTextField kivymd.uix.textfield.MDTextField
+#:import MDSeparator kivymd.uix.card.MDSeparator
+#:import MDIconButton kivymd.uix.button.MDIconButton
+#:import MDLabel kivymd.uix.label.MDLabel
+#:import MDCard kivymd.uix.card.MDCard
+#:import MDBoxLayout kivymd.uix.boxlayout.MDBoxLayout
+#:import MDGridLayout kivymd.uix.gridlayout.MDGridLayout
+
+<Pesquisar>:
+    canvas.before:
+        Color:
+            rgba: [0.07, 0.07, 0.07, 1] # Substitua esta linha pela cor hexadecimal #1DB954
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    name: 'pesquisar'
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDToolbar:
+            title: "Buscar"
+            md_bg_color: 0.071, 0.071, 0.071, 1
+            size_hint_y: None
+            height: "56dp"
+
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: "10dp"
+
+            MDBoxLayout:
+                padding: "10dp"
+                spacing: "10dp"
+                size_hint_y: None
+                height: "5dp"
+            MDFloatLayout:
+                MDCard:
+
+                    md_bg_color: get_color_from_hex('#ffffff')
+                    pos_hint: {'center_y': 1, 'center_x': .5}
+                    size_hint_y: .07
+                    radius: [3,]
+                    on_release: root.search()
+                    MDFloatLayout:
+                        MDIcon:
+                            icon: 'magnify'
+                            pos_hint: {'center_x': .52, 'center_y': .5}
+                        MDLabel:
+                            text: 'O que você quer ouvir?'
+                            halign: 'left'
+                            font_name: 'fonts/medium.otf'
+                            pos_hint: {'center_x': .63, 'center_y': .5}
+                            theme_text_color: "Custom"
+                            text_color: get_color_from_hex('#292828')
+
+                MDLabel:
+                    text: 'Navegar por todas as seções'
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1
+                    pos_hint: {'center_y': .92, 'center_x': .5}
+                    font_name: 'fonts/medium.otf'
+    MDFloatLayout:
+        ScrollView:
+            size_hint_y: .67
+            pos_hint: {'center_x': 0.5, 'top': .78}
+            GridLayout:
+                cols: 2
+                padding: [12,12,12,2]
+                spacing: "12dp"
+                size_hint_y: None
+                height: self.minimum_height
+                adaptive_height: True
+                pos_hint: {"center_x": 0.5}
+
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#FF6606')
+                    on_release: root.click_playlist('sertanejo', 'Sertanejo')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Sertanejo"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#32c40e')
+                    on_release: root.click_playlist('brazilianfunk', 'Funk')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Funk"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#a118a1')
+                    on_release: root.click_playlist('gospel', 'Gospel')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Gospel"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#44BD56')
+                    on_release: root.click_playlist('brazilian', 'MPB')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "MPB"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#4FBED2')
+                    on_release: root.click_playlist('sambapagode', 'Samba e Pagode')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Samba e pagode"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#FFA90E')
+                    on_release: root.click_playlist('forro', 'Forró')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Forró"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#2DBDA4')
+                    on_release: root.click_playlist('electronic', 'Música Eletrônica')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Musica eletrônica"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#243BB9')
+                    on_release: root.click_playlist('rap', 'Rap')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Rap"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#DD4783')
+                    on_release: root.click_playlist('pop', 'Pop')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Pop"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#CD423B')
+                    on_release: root.click_playlist('rock', 'Rock')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Rock"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#B871E3')
+                    on_release: root.click_playlist('rnb', 'R&B')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "R&B"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#D81DAB')
+                    on_release: root.click_playlist('mexicanmusic', 'Música Mexicana')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Música mexicana"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#97B446')
+                    on_release: root.click_playlist('reggaeton', 'Reggaeton')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Reggaeton"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#EF8158')
+                    on_release: root.click_playlist('latin', 'Música Latina')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Latina"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#4E5367')
+                    on_release: root.click_playlist('metal', 'Metal')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Metal"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#00ADBD')
+                    on_release: root.click_playlist('dance', 'Dance')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Dança e EDM"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#492A86')
+                    on_release: root.click_playlist('afro', 'Afro Music')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Afro"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#E14C84')
+                    on_release: root.click_playlist('k-pop', 'K-Pop')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "K-Pop"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#FEA815')
+                    on_release: root.click_playlist('soulfunk', 'Soul Funk')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Soul e Funk"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#B5B5B5')
+                    on_release: root.click_playlist('christian', 'Música Cristã')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Música cristã"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#746151')
+                    on_release: root.click_playlist('country', 'Country')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Country"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#DA884B')
+                    on_release: root.click_playlist('salsa', 'Salsa')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Salsa"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#12B069')
+                    on_release: root.click_playlist('reggae', 'Reggae')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Reggae"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#161616')
+                    on_release: root.click_playlist('classical', 'Música Clássica')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Clássicas"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#5A9CD6')
+                    on_release: root.click_playlist('blues', 'Blues')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Blues"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#3A529A')
+                    on_release: root.click_playlist('jazz', 'Jazz')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Jazz"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size:
+                MDCard:
+                    size_hint_y: None
+                    height: '88dp'
+                    radius: [10,]
+                    md_bg_color: get_color_from_hex('#0185B6')
+                    on_release: root.click_playlist('asian', 'Música Asiática')
+                    MDFloatLayout:
+                        MDLabel:
+                            font_name: 'fonts/medium.otf'
+                            text: "Música asiática"
+                            theme_text_color: "Custom"
+                            text_color: 1, 1, 1, 1
+                            halign: "center"
+                            pos_hint: {"center_x": .5, "center_y": .5}
+                            font_size: '18dp'
+
+
+
+
+    MDFloatLayout:
+
+        ScrollView:
+            do_scroll_y: False
+            id: scroll
+            size_hint: 1, 1  # define a altura do ScrollView em relação ao seu pai
+            pos_hint: {'center_x': 0.53, 'top': 0.0}  # define a posição do ScrollView em relação ao seu pai
+
+            MDCard:
+                id: card
+                on_touch_move: root.on_touch_move(args[1])
+                size_hint: .95, .12
+                radius: [8,]
+                md_bg_color: get_color_from_hex('#1DD05D')
+
+
+                FloatLayout:
+
+                    FitImage:
+                        id: image_musica
+                        size_hint_x:.13
+                        size_hint_y:.5
+                        pos_hint: {'center_x': .08, 'center_y': .5}
+                        source: 'akon.png'
+                        allow_stretch: True
+                        keep_ratio: True
+                    MDLabel:
+                        id: nome_musica
+                        font_size: '13dp'
+                        font_name: 'fonts/bold.otf'
+                        text: 'O aplicativo está bugado!'
+                        pos_hint: {'center_x': .44, 'center_y': .63}
+                        size_hint_x: .55
+                        halign: 'left'
+                    MDLabel:
+                        id: nome_artista
+                        font_size: '13dp'
+                        font_name: 'fonts/light.otf'
+                        text: 'O aplicativo está bugado!'
+                        pos_hint: {'center_x': .44, 'center_y': .35}
+                        size_hint_x: .55
+                        halign: 'left'
+                    MDIconButton:
+                        id: play
+                        icon: "play"
+                        pos_hint: {'center_x': .92, 'center_y': .5}
+                        theme_text_color: "Custom"
+                        text_color: get_color_from_hex('#121212')
+                        on_release: root.play_stop()
+                    MDIconButton:
+                        icon: "stop"
+                        pos_hint: {'center_x': .8, 'center_y': .5}
+                        theme_text_color: "Custom"
+                        text_color: get_color_from_hex('#121212')
+                        on_release: root.stop()
+                    ProgressBar:
+
+                        id: progress_bar
+                        max: 100
+                        size_hint_x:.98
+                        pos_hint: {'center_x': .5, 'center_y': .04}
+                        on_touch_down: root.click_barra(*args)
+                        size_hint_y: .5
+
+
+    ScrollView:
+        do_scroll_y: False
+        do_scroll_y: False
+        pos_hint: {'center_x': 0.5, 'top': 0.10}  # define a posição do ScrollView em relação ao seu pai
+        MDFloatLayout:
+            MDCard:
+                md_bg_color: 0, 0, 0, 0.1
+                size_hint: 1, .14
+                pos_hint: {"center_x": .5, "center_y": .925}
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 0.9 # define a cor de fundo (preto transparente)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+
+                MDFloatLayout:
+
+                    MDIconButton:
+                        pos_hint: {"center_x": .16, "center_y": .75}
+                        icon: 'home'
+                        theme_text_color: 'Custom'
+                        text_color: get_color_from_hex('#ffffff')
+                        on_release: on_press: root.manager.transition.direction = 'left'; root.manager.current = 'inicio'
+
+                    MDLabel:
+                        pos_hint: {"center_x": .159, "center_y": .55}
+                        text: 'Início'
+                        halign: 'center'
+                        font_name: 'fonts/medium.otf'
+                        font_size: '13dp'
+                        theme_text_color: 'Custom'
+                        text_color: get_color_from_hex('#ffffff')
+
+                    MDIconButton:
+                        pos_hint: {"center_x": .5, "center_y": .75}
+                        icon: 'magnify'
+                        theme_text_color: 'Custom'
+                        text_color: get_color_from_hex('#1DB954')
+
+                    MDLabel:
+                        pos_hint: {"center_x": .5, "center_y": .55}
+                        text: 'Buscar'
+                        font_size: '13dp'
+                        halign: 'center'
+                        font_name: 'fonts/medium.otf'
+                        theme_text_color: 'Custom'
+                        text_color: get_color_from_hex('#1DB954')
+
+                    MDIconButton:
+                        pos_hint: {"center_x": .84, "center_y": .75}
+                        icon: 'chip'
+                        theme_text_color: 'Custom'
+                        text_color: get_color_from_hex('#ffffff')
+
+                    MDLabel:
+                        pos_hint: {"center_x": .84, "center_y": .55}
+                        text: 'IA'
+                        font_size: '13dp'
+                        halign: 'center'
+                        font_name: 'fonts/medium.otf'
+                        theme_text_color: 'Custom'
+                        text_color: get_color_from_hex('#ffffff')
+
+
+
+
+
+

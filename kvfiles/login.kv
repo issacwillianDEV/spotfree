@@ -1,0 +1,40 @@
+#:kivy 2.0.0
+#:import VideoPlayer kivy.uix.videoplayer.VideoPlayer
+#:import Image kivy.uix.image.Image
+
+
+
+<Login>:
+    canvas.before:
+        Color:
+            rgba: [0,0,0,1] # Substitua esta linha pela cor hexadecimal #1DB954
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    name: 'login'
+
+
+    MDFloatLayout:
+
+        FitImage:
+            id: imageminicial
+            source: 'imagens/login4.jpg'
+            opacity: 0.3
+
+        Image:
+            source: 'imagens/logobranco.png'
+            pos_hint: {'center_x': 0.5, 'center_y': 0.85}
+            size_hint_x: .8
+        MDFillRoundFlatIconButton:
+            text: 'Começar a escutar'
+            md_bg_color: [1,1,1,1]
+            theme_text_color: 'Custom'
+            text_color: get_color_from_hex('#121212')
+            theme_icon_color: 'Custom'
+            icon: 'music'
+            font_name: 'fonts/medium.otf'
+            font_size: '17dp'
+            icon_color: get_color_from_hex('#121212')
+            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+            on_release: root.iniciar()

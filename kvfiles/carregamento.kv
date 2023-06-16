@@ -1,0 +1,41 @@
+#:kivy 2.0.0
+#:import MDLabel kivymd.uix.label.MDLabel
+#:import MDCard kivymd.uix.card.MDCard
+#:import OneLineListItem kivymd.uix.list.OneLineListItem
+
+
+
+<Carregamento>:
+    canvas.before:
+        Color:
+            rgba: [0.07, 0.07, 0.07, 1] # Substitua esta linha pela cor hexadecimal #1DB954
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    name: 'carregamento'
+    MDBoxLayout:
+        orientation: 'vertical'
+        padding: '20dp'
+        MDFloatLayout:
+            MDLabel:
+                id: label_progress
+                text: '0%'
+                theme_text_color: "Custom"
+                font_size: '50dp'
+                text_color: get_color_from_hex('#FFFFFF')
+                pos_hint: {"center_x": .5, "center_y": .63}
+                color: [0x1D/255, 0xD0/255, 0x5D/255, 1]
+                halign: 'center'
+            MDLabel:
+                id: label_progress_info
+                text: 'Carregando músicas'
+                font_style: 'Caption'
+                theme_text_color: "Custom"
+                text_color: get_color_from_hex('#FFFFFF')
+                pos_hint: {"center_x": .5, "center_y": .48}
+                halign: 'center'
+            MDProgressBar:
+                id: progress_carregamento
+                max: 100
+                pos_hint: {"center_x": .5, "center_y": .41}
+                color: [0x1D/255, 0xD0/255, 0x5D/255, 1]

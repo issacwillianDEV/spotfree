@@ -1,0 +1,813 @@
+#:kivy 2.0.0
+#:import MDLabel kivymd.uix.label.MDLabel
+#:import MDCard kivymd.uix.card.MDCard
+#:import OneLineListItem kivymd.uix.list.OneLineListItem
+#:import Color kivy.graphics.Color
+
+
+
+<Inicio>:
+    canvas.before:
+        Color:
+            rgba: [0.07, 0.07, 0.07, 1] # Substitua esta linha pela cor hexadecimal #1DB954
+        Rectangle:
+            size: self.size
+            pos: self.pos
+    name: 'inicio'
+
+    MDBoxLayout:
+        orientation: 'vertical'
+        MDToolbar:
+            title: 'Bem vindos ao Spot Free'
+            md_bg_color: [0.07, 0.07, 0.07, 1]
+            title_size: '240sp' # aumenta o tamanho da fonte para 24sp
+            title_bold: True # define o texto em negrito
+            right_action_items: [["information", lambda x: app.callback()]]
+
+        ScrollView:
+            size: self.size
+            GridLayout:
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                padding: dp(8)
+                spacing: dp(8)
+                MDLabel:
+                    text: 'PlayLists em alta'
+                    font_name: 'fonts/bold.otf'
+                    font_size:'25sp'
+                    theme_text_color: 'Custom'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    custom_text_color: 'Custom'
+                    text_color: [1,1,1,1]
+
+                GridLayout:
+                    cols: 1
+                    size_hint_y: None
+                    padding: [0,0,0,0]
+                    spacing: dp(8)
+                    height: '360dp'
+                    md_bg_color: get_color_from_hex('#ffffff')
+                    MDCard:
+                        size_hint_y: None
+                        height: self.parent.height * 0.185
+                        md_bg_color: get_color_from_hex('#1DD05D')
+                        MDFloatLayout:
+                            AsyncImage:
+                                id: source_playlist1
+                                source: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpEdnNbsDaRSTzVOLdVyF-kz95XjHpSOGawY8NAoWteW08YxweA4gB0ub9nQ&amp;s"
+                                size_hint_y: None
+                                height: self.parent.height
+                                pos_hint: {'center_y': .5, 'center_x': .095}
+                            MDLabel:
+                                id: titulo_playlist1
+                                text: 'Top 50 Sertanejo'
+                                halign: 'left'
+                                font_style: 'Subtitle2'
+                                pos_hint: {'center_y': .64, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#121212')
+                            MDLabel:
+                                id: n_playlist1
+                                text: '50 faixas'
+                                halign: 'left'
+                                font_style: 'Caption'
+                                pos_hint: {'center_y': .3, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#121212')
+                            MDIconButton:
+                                id: abrir_playlist1
+                                icon: "arrow-right"
+                                pos_hint: {'center_x': .9, 'center_y': .5}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#121212')
+
+                    MDCard:
+                        size_hint_y: None
+                        height: self.parent.height * 0.185
+                        md_bg_color: get_color_from_hex('#1DD05D')
+                        MDFloatLayout:
+                            AsyncImage:
+                                id: source_playlist2
+                                source: "akon.png"
+                                size_hint_y: None
+                                height: self.parent.height
+                                pos_hint: {'center_y': .5, 'center_x': .095}
+                            MDLabel:
+                                id: titulo_playlist2
+                                text: 'Top 50 Sertanejo'
+                                halign: 'left'
+                                font_style: 'Subtitle2'
+                                pos_hint: {'center_y': .64, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#121212')
+                            MDLabel:
+                                id: n_playlist2
+                                text: '50 faixas'
+                                halign: 'left'
+                                font_style: 'Caption'
+                                pos_hint: {'center_y': .3, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#121212')
+                            MDIconButton:
+                                id: abrir_playlist2
+                                icon: "arrow-right"
+                                pos_hint: {'center_x': .9, 'center_y': .5}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#121212')
+
+                    MDCard:
+                        size_hint_y: None
+                        height: self.parent.height * 0.185
+                        md_bg_color: get_color_from_hex('#1DD05D')
+                        MDFloatLayout:
+                            AsyncImage:
+                                id: source_playlist3
+                                source: "akon.png"
+                                size_hint_y: None
+                                height: self.parent.height
+                                pos_hint: {'center_y': .5, 'center_x': .095}
+                            MDLabel:
+                                id: titulo_playlist3
+                                text: 'Top 50 Sertanejo'
+                                halign: 'left'
+                                font_style: 'Subtitle2'
+                                pos_hint: {'center_y': .64, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#121212')
+                            MDLabel:
+                                id: n_playlist3
+                                text: '50 faixas'
+                                halign: 'left'
+                                font_style: 'Caption'
+                                pos_hint: {'center_y': .3, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#121212')
+                            MDIconButton:
+                                id: abrir_playlist3
+                                icon: "arrow-right"
+                                pos_hint: {'center_x': .9, 'center_y': .5}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#121212')
+
+                    MDCard:
+                        size_hint_y: None
+                        height: self.parent.height * 0.185
+                        md_bg_color: get_color_from_hex('#1DD05D')
+                        MDFloatLayout:
+                            AsyncImage:
+                                id: source_playlist4
+                                source: "akon.png"
+                                size_hint_y: None
+                                height: self.parent.height
+                                pos_hint: {'center_y': .5, 'center_x': .095}
+                            MDLabel:
+                                id: titulo_playlist4
+                                text: 'Top 50 Sertanejo'
+                                halign: 'left'
+                                font_style: 'Subtitle2'
+                                pos_hint: {'center_y': .64, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#121212')
+                            MDLabel:
+                                id: n_playlist4
+                                text: '50 faixas'
+                                halign: 'left'
+                                font_style: 'Caption'
+                                pos_hint: {'center_y': .3, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#121212')
+                            MDIconButton:
+                                id: abrir_playlist4
+                                icon: "arrow-right"
+                                pos_hint: {'center_x': .9, 'center_y': .5}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#121212')
+
+                    MDCard:
+                        size_hint_y: None
+                        height: self.parent.height * 0.185
+                        md_bg_color: get_color_from_hex('#1DD05D')
+                        MDFloatLayout:
+                            AsyncImage:
+                                id: source_playlist5
+                                source: "akon.png"
+                                size_hint_y: None
+                                height: self.parent.height
+                                pos_hint: {'center_y': .5, 'center_x': .095}
+                            MDLabel:
+                                id: titulo_playlist5
+                                text: 'Top 50 Sertanejo'
+                                halign: 'left'
+                                font_style: 'Subtitle2'
+                                pos_hint: {'center_y': .64, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#121212')
+                            MDLabel:
+                                id: n_playlist5
+                                text: '50 faixas'
+                                halign: 'left'
+                                font_style: 'Caption'
+                                pos_hint: {'center_y': .3, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#121212')
+                            MDIconButton:
+                                id: abrir_playlist5
+                                icon: "arrow-right"
+                                pos_hint: {'center_x': .9, 'center_y': .5}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#121212')
+                MDLabel:
+                    text: '\nSucesso no Brasil'
+                    font_size:'25sp'
+                    theme_text_color: 'Custom'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    custom_text_color: 'Custom'
+                    text_color: [1,1,1,1]
+                    font_name: 'fonts/bold.otf'
+
+                GridLayout:
+                    cols: 1
+                    size_hint_y: None
+                    padding: [10,0,0,0]
+                    spacing: dp(8)
+                    height: '360dp'
+                    md_bg_color: get_color_from_hex('#ffffff')
+                    MDCard:
+                        size_hint_y: None
+                        height: self.parent.height * 0.14
+                        md_bg_color: get_color_from_hex('#29282B')
+                        MDFloatLayout:
+                            AsyncImage:
+                                id: source_brasil1
+                                source: "akon.png"
+                                size_hint_y: None
+                                height: self.parent.height
+                                pos_hint: {'center_y': .5, 'center_x': .1}
+                            MDLabel:
+                                id: titulo_brasil1
+                                text: 'Titulo! da musica aqui agora das sda! dasd asd as'
+                                size_hint_x: .6
+                                halign: 'left'
+                                font_style: 'Caption'
+                                bold: True
+                                pos_hint: {'center_y': .64, 'center_x': .56}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDLabel:
+                                id: artista_brasil1
+                                text: 'Artista!'
+                                halign: 'left'
+                                font_style: 'Caption'
+                                pos_hint: {'center_y': .3, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDIconButton:
+                                id: playbrasil1
+                                icon: "play"
+                                pos_hint: {'center_x': .9, 'center_y': .5}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#FFFFFF')
+                                on_release: root.play(titulo_brasil1.text, artista_brasil1.text, '1', source_brasil1.source)
+                    MDCard:
+                        size_hint_y: None
+                        height: self.parent.height * 0.14
+                        md_bg_color: get_color_from_hex('#29282B')
+                        MDFloatLayout:
+                            AsyncImage:
+                                id: source_brasil2
+                                source: "akon.png"
+                                size_hint_y: None
+                                height: self.parent.height
+                                pos_hint: {'center_y': .5, 'center_x': .1}
+                            MDLabel:
+                                id: titulo_brasil2
+                                text: 'Titulo! da musica aqui agora!'
+                                halign: 'left'
+                                font_style: 'Subtitle2'
+                                pos_hint: {'center_y': .64, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDLabel:
+                                id: artista_brasil2
+                                text: 'Artista!'
+                                halign: 'left'
+                                font_style: 'Caption'
+                                pos_hint: {'center_y': .3, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDIconButton:
+                                id: playbrasil2
+                                icon: "play"
+                                pos_hint: {'center_x': .9, 'center_y': .5}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#FFFFFF')
+                                on_release: root.play(titulo_brasil2.text, artista_brasil2.text, '2', source_brasil2.source)
+                    MDCard:
+                        size_hint_y: None
+                        height: self.parent.height * 0.14
+                        md_bg_color: get_color_from_hex('#29282B')
+                        MDFloatLayout:
+                            AsyncImage:
+                                id: source_brasil3
+                                source: "akon.png"
+                                size_hint_y: None
+                                height: self.parent.height
+                                pos_hint: {'center_y': .5, 'center_x': .1}
+                            MDLabel:
+                                id: titulo_brasil3
+                                text: 'Titulo! da musica aqui agora!'
+                                halign: 'left'
+                                font_style: 'Subtitle2'
+                                pos_hint: {'center_y': .64, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDLabel:
+                                id: artista_brasil3
+                                text: 'Artista!'
+                                halign: 'left'
+                                font_style: 'Caption'
+                                pos_hint: {'center_y': .3, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDIconButton:
+                                id: playbrasil3
+                                icon: "play"
+                                pos_hint: {'center_x': .9, 'center_y': .5}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#FFFFFF')
+                                on_release: root.play(titulo_brasil3.text, artista_brasil3.text, '3', source_brasil3.source)
+                    MDCard:
+                        size_hint_y: None
+                        height: self.parent.height * 0.14
+                        md_bg_color: get_color_from_hex('#29282B')
+                        MDFloatLayout:
+                            AsyncImage:
+                                id: source_brasil4
+                                source: "akon.png"
+                                size_hint_y: None
+                                height: self.parent.height
+                                pos_hint: {'center_y': .5, 'center_x': .1}
+                            MDLabel:
+                                id: titulo_brasil4
+                                text: 'Titulo! da musica aqui agora!'
+                                halign: 'left'
+                                font_style: 'Subtitle2'
+                                pos_hint: {'center_y': .64, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDLabel:
+                                id: artista_brasil4
+                                text: 'Artista!'
+                                halign: 'left'
+                                font_style: 'Caption'
+                                pos_hint: {'center_y': .3, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDIconButton:
+                                id: playbrasil4
+                                icon: "play"
+                                pos_hint: {'center_x': .9, 'center_y': .5}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#FFFFFF')
+                                on_release: root.play(titulo_brasil4.text, artista_brasil4.text, '4',source_brasil4.source )
+
+                    MDCard:
+                        size_hint_y: None
+                        height: self.parent.height * 0.14
+                        md_bg_color: get_color_from_hex('#29282B')
+                        MDFloatLayout:
+
+                            AsyncImage:
+                                id: source_brasil5
+                                source: "akon.png"
+                                size_hint_y: None
+                                height: self.parent.height
+                                pos_hint: {'center_y': .5, 'center_x': .1}
+                            MDLabel:
+                                id: titulo_brasil5
+                                text: 'Titulo! da musica aqui agora!'
+                                halign: 'left'
+                                font_style: 'Subtitle2'
+                                pos_hint: {'center_y': .64, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDLabel:
+                                id: artista_brasil5
+                                text: 'Artista!'
+                                halign: 'left'
+                                font_style: 'Caption'
+                                pos_hint: {'center_y': .3, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDIconButton:
+                                id: playbrasil5
+                                icon: "play"
+                                pos_hint: {'center_x': .9, 'center_y': .5}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#FFFFFF')
+                                on_release: root.play(titulo_brasil5.text, artista_brasil5.text, '5', source_brasil5.source)
+                    MDCard:
+                        size_hint_y: None
+                        height: self.parent.height * 0.14
+                        md_bg_color: get_color_from_hex('#1DD05D99')
+                        MDFloatLayout:
+
+                            AsyncImage:
+                                source: "akon.png"
+                                size_hint_y: None
+                                height: self.parent.height
+                                pos_hint: {'center_y': .5, 'center_x': .05}
+                            MDLabel:
+                                id: ver_mais_brasil
+                                text: 'Ver mais músicas'
+                                halign: 'center'
+                                font_style: 'Subtitle2'
+                                pos_hint: {'center_y': .5, 'center_x': .5}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDIconButton:
+                                id: ver_mais_brasil
+                                icon: "plus"
+                                pos_hint: {'center_x': .9, 'center_y': .5}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#FFFFFF')
+                                on_release: root.vermais('1111141961')
+
+
+                MDLabel:
+                    text: 'Sucesso no Mundo'
+                    font_size:'25sp'
+                    theme_text_color: 'Custom'
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    custom_text_color: 'Custom'
+                    text_color: [1,1,1,1]
+                    font_name: 'fonts/bold.otf'
+
+                GridLayout:
+                    cols: 1
+                    size_hint_y: None
+                    padding: [10,0,0,0]
+                    spacing: dp(8)
+                    height: '460dp'
+                    md_bg_color: get_color_from_hex('#ffffff')
+                    MDCard:
+                        size_hint_y: None
+                        height: self.parent.height * 0.11
+                        md_bg_color: get_color_from_hex('#29282B')
+                        MDFloatLayout:
+                            AsyncImage:
+                                id: source_mundo1
+                                source: "akon.png"
+                                size_hint_y: None
+                                height: self.parent.height
+                                pos_hint: {'center_y': .5, 'center_x': .1}
+                            MDLabel:
+                                id: titulo_mundo1
+                                text: 'Titulo! da musica aqui agora!'
+                                halign: 'left'
+                                font_style: 'Subtitle2'
+                                pos_hint: {'center_y': .64, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDLabel:
+                                id: artista_mundo1
+                                text: 'Artista!'
+                                halign: 'left'
+                                font_style: 'Caption'
+                                pos_hint: {'center_y': .3, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDIconButton:
+                                id: playmundo6
+                                icon: "play"
+                                pos_hint: {'center_x': .9, 'center_y': .5}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#FFFFFF')
+                                on_release: root.play(titulo_mundo1.text, artista_mundo1.text, '6', source_mundo1.source)
+                    MDCard:
+                        size_hint_y: None
+                        height: self.parent.height * 0.11
+                        md_bg_color: get_color_from_hex('#29282B')
+                        MDFloatLayout:
+                            AsyncImage:
+                                id: source_mundo2
+                                source: "akon.png"
+                                size_hint_y: None
+                                height: self.parent.height
+                                pos_hint: {'center_y': .5, 'center_x': .1}
+                            MDLabel:
+                                id: titulo_mundo2
+                                text: 'Titulo! da musica aqui agora!'
+                                halign: 'left'
+                                font_style: 'Subtitle2'
+                                pos_hint: {'center_y': .64, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDLabel:
+                                id: artista_mundo2
+                                text: 'Artista!'
+                                halign: 'left'
+                                font_style: 'Caption'
+                                pos_hint: {'center_y': .3, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDIconButton:
+                                id: playmundo7
+                                icon: "play"
+                                pos_hint: {'center_x': .9, 'center_y': .5}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#FFFFFF')
+                                on_release: root.play(titulo_mundo2.text, artista_mundo2.text, '7', source_mundo2.source)
+                    MDCard:
+                        size_hint_y: None
+                        height: self.parent.height * 0.11
+                        md_bg_color: get_color_from_hex('#29282B')
+                        MDFloatLayout:
+                            AsyncImage:
+                                id: source_mundo3
+                                source: "akon.png"
+                                size_hint_y: None
+                                height: self.parent.height
+                                pos_hint: {'center_y': .5, 'center_x': .1}
+                            MDLabel:
+                                id: titulo_mundo3
+                                text: 'Titulo! da musica aqui agora!'
+                                halign: 'left'
+                                font_style: 'Subtitle2'
+                                pos_hint: {'center_y': .64, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDLabel:
+                                id: artista_mundo3
+                                text: 'Artista!'
+                                halign: 'left'
+                                font_style: 'Caption'
+                                pos_hint: {'center_y': .3, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDIconButton:
+                                id: playmundo8
+                                icon: "play"
+                                pos_hint: {'center_x': .9, 'center_y': .5}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#FFFFFF')
+                                on_release: root.play(titulo_mundo3.text, artista_mundo3.text, '8', source_mundo3.source)
+                    MDCard:
+                        size_hint_y: None
+                        height: self.parent.height * 0.11
+                        md_bg_color: get_color_from_hex('#29282B')
+                        MDFloatLayout:
+                            AsyncImage:
+                                id: source_mundo4
+                                source: "akon.png"
+                                size_hint_y: None
+                                height: self.parent.height
+                                pos_hint: {'center_y': .5, 'center_x': .1}
+                            MDLabel:
+                                id: titulo_mundo4
+                                text: 'Titulo! da musica aqui agora!'
+                                halign: 'left'
+                                font_style: 'Subtitle2'
+                                pos_hint: {'center_y': .64, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDLabel:
+                                id: artista_mundo4
+                                text: 'Artista!'
+                                halign: 'left'
+                                font_style: 'Caption'
+                                pos_hint: {'center_y': .3, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDIconButton:
+                                id: playmundo9
+                                icon: "play"
+                                pos_hint: {'center_x': .9, 'center_y': .5}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#FFFFFF')
+                                on_release: root.play(titulo_mundo4.text, artista_mundo4.text, '9',source_mundo4.source )
+
+                    MDCard:
+                        size_hint_y: None
+                        height: self.parent.height * 0.11
+                        md_bg_color: get_color_from_hex('#29282B')
+                        MDFloatLayout:
+
+                            AsyncImage:
+                                id: source_mundo5
+                                source: "akon.png"
+                                size_hint_y: None
+                                height: self.parent.height
+                                pos_hint: {'center_y': .5, 'center_x': .1}
+                            MDLabel:
+                                id: titulo_mundo5
+                                text: 'Titulo! da musica aqui agora!'
+                                halign: 'left'
+                                font_style: 'Subtitle2'
+                                pos_hint: {'center_y': .64, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDLabel:
+                                id: artista_mundo5
+                                text: 'Artista!'
+                                halign: 'left'
+                                font_style: 'Caption'
+                                pos_hint: {'center_y': .3, 'center_x': .76}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDIconButton:
+                                id: playmundo10
+                                icon: "play"
+                                pos_hint: {'center_x': .9, 'center_y': .5}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#FFFFFF')
+                                on_release: root.play(titulo_mundo5.text, artista_mundo5.text, '10', source_mundo5.source)
+                    MDCard:
+                        size_hint_y: None
+                        height: self.parent.height * 0.11
+                        md_bg_color: get_color_from_hex('#1DD05D99')
+                        MDFloatLayout:
+
+                            AsyncImage:
+                                source: "akon.png"
+                                size_hint_y: None
+                                height: self.parent.height
+                                pos_hint: {'center_y': .5, 'center_x': .05}
+                            MDLabel:
+                                id: ver_mais_mundo
+                                text: 'Ver mais músicas'
+                                halign: 'center'
+                                font_style: 'Subtitle2'
+                                pos_hint: {'center_y': .5, 'center_x': .5}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#ffffff')
+                            MDIconButton:
+                                id: ver_mais_mundo
+                                icon: "plus"
+                                pos_hint: {'center_x': .9, 'center_y': .5}
+                                theme_text_color: "Custom"
+                                text_color: get_color_from_hex('#FFFFFF')
+                                on_release: root.vermais('3155776842')
+
+
+
+
+
+
+
+
+
+
+
+
+
+    MDLabel:
+        id: n_audio
+        pos_hint: {'center_x': 5}
+        text: 'IDAUDIO'
+
+    MDFloatLayout:
+
+        ScrollView:
+            do_scroll_y: False
+            id: scroll
+            size_hint: 1, 1  # define a altura do ScrollView em relação ao seu pai
+            pos_hint: {'center_x': 0.53, 'top': 0.0}  # define a posição do ScrollView em relação ao seu pai
+
+            MDCard:
+                id: card
+                on_touch_move: root.on_touch_move(args[1])
+                size_hint: .95, .12
+                radius: [8,]
+                md_bg_color: get_color_from_hex('#1DD05D')
+
+
+                FloatLayout:
+
+                    FitImage:
+                        id: image_musica
+                        size_hint_x:.13
+                        size_hint_y:.5
+                        pos_hint: {'center_x': .08, 'center_y': .5}
+                        source: 'akon.png'
+                        allow_stretch: True
+                        keep_ratio: True
+                    MDLabel:
+                        id: nome_musica
+                        font_size: '13dp'
+                        font_name: 'fonts/bold.otf'
+                        text: 'O aplicativo está bugado!'
+                        pos_hint: {'center_x': .44, 'center_y': .63}
+                        size_hint_x: .55
+                        halign: 'left'
+                    MDLabel:
+                        id: nome_artista
+                        font_size: '13dp'
+                        font_name: 'fonts/light.otf'
+                        text: 'O aplicativo está bugado!'
+                        pos_hint: {'center_x': .44, 'center_y': .35}
+                        size_hint_x: .55
+                        halign: 'left'
+                    MDIconButton:
+                        id: play
+                        icon: "play"
+                        pos_hint: {'center_x': .92, 'center_y': .5}
+                        theme_text_color: "Custom"
+                        text_color: get_color_from_hex('#121212')
+                        on_release: root.play_stop()
+                    MDIconButton:
+                        icon: "stop"
+                        pos_hint: {'center_x': .8, 'center_y': .5}
+                        theme_text_color: "Custom"
+                        text_color: get_color_from_hex('#121212')
+                        on_release: root.stop()
+                    ProgressBar:
+
+                        id: progress_bar
+                        max: 100
+                        size_hint_x:.98
+                        pos_hint: {'center_x': .5, 'center_y': .04}
+                        on_touch_down: root.click_barra(*args)
+                        size_hint_y: .5
+
+
+
+
+
+    ScrollView:
+        do_scroll_y: False
+        do_scroll_y: False
+        pos_hint: {'center_x': 0.5, 'top': 0.10}  # define a posição do ScrollView em relação ao seu pai
+        MDFloatLayout:
+            MDCard:
+                md_bg_color: 0, 0, 0, 0.1
+                size_hint: 1, .14
+                pos_hint: {"center_x": .5, "center_y": .925}
+                canvas.before:
+                    Color:
+                        rgba: 0, 0, 0, 0.9 # define a cor de fundo (preto transparente)
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+
+                MDFloatLayout:
+
+                    MDIconButton:
+                        pos_hint: {"center_x": .16, "center_y": .75}
+                        icon: 'home'
+                        theme_text_color: 'Custom'
+                        text_color: get_color_from_hex('#1DB954')
+
+                    MDLabel:
+                        pos_hint: {"center_x": .159, "center_y": .55}
+                        text: 'Início'
+                        halign: 'center'
+                        font_name: 'fonts/medium.otf'
+                        font_size: '13dp'
+                        theme_text_color: 'Custom'
+                        text_color: get_color_from_hex('#1DB954')
+
+                    MDIconButton:
+                        pos_hint: {"center_x": .5, "center_y": .75}
+                        icon: 'magnify'
+                        theme_text_color: 'Custom'
+                        text_color: get_color_from_hex('#ffffff')
+                        on_release: on_press: root.manager.transition.direction = 'left'; root.manager.current = 'pesquisar'
+
+                    MDLabel:
+                        pos_hint: {"center_x": .5, "center_y": .55}
+                        text: 'Buscar'
+                        font_size: '13dp'
+                        halign: 'center'
+                        font_name: 'fonts/medium.otf'
+                        theme_text_color: 'Custom'
+                        text_color: get_color_from_hex('#ffffff')
+
+                    MDIconButton:
+                        pos_hint: {"center_x": .84, "center_y": .75}
+                        icon: 'chip'
+                        theme_text_color: 'Custom'
+                        text_color: get_color_from_hex('#ffffff')
+
+                    MDLabel:
+                        pos_hint: {"center_x": .84, "center_y": .55}
+                        text: 'IA'
+                        font_size: '13dp'
+                        halign: 'center'
+                        font_name: 'fonts/medium.otf'
+                        theme_text_color: 'Custom'
+                        text_color: get_color_from_hex('#ffffff')
+
+
+
+
+
+
+
+
+
+

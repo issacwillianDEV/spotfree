@@ -1,0 +1,148 @@
+GridLayout:
+                    cols: 2
+                    size_hint_y: None
+                    padding: [0,0,0,0]
+                    spacing: dp(8)
+                    height: '360dp'
+                    md_bg_color: get_color_from_hex('#ffffff')
+                    MDCard:
+                        id: sertanejo
+                        size_hint_y: None
+                        height: self.parent.height * 0.165
+                        md_bg_color: get_color_from_hex('#1DD05D')
+                        radius: [10,]
+                        MDLabel:
+                            text: 'Sertanejo'
+                            text_color: 'Custom'
+                            font_size: '15dp'
+                            text_color: [1,1,1,1]
+                            halign: 'center'
+                            font_name: 'fonts/bold.otf'
+                    MDCard:
+                        id: mpb
+                        size_hint_y: None
+                        height: self.parent.height * 0.165
+                        md_bg_color: get_color_from_hex('#1DD05D')
+                        radius: [10,]
+                        MDLabel:
+                            text: 'MPB'
+                            text_color: 'Custom'
+                            font_style: 'Subtitle2'
+                            font_size: '15dp'
+                            text_color: [1,1,1,1]
+                            font_name: 'fonts/bold.otf'
+                            halign: 'center'
+                    MDCard:
+                        id: pagode
+                        size_hint_y: None
+                        height: self.parent.height * 0.165
+                        md_bg_color: get_color_from_hex('#1DD05D')
+                        radius: [10,]
+                        MDLabel:
+                            text: 'Pagode'
+                            text_color: 'Custom'
+                            font_style: 'Subtitle2'
+                            font_size: '15dp'
+                            text_color: [1,1,1,1]
+                            font_name: 'fonts/bold.otf'
+                            halign: 'center'
+                    MDCard:
+                        id: funk
+                        size_hint_y: None
+                        height: self.parent.height * 0.165
+                        md_bg_color: get_color_from_hex('#1DD05D')
+                        radius: [10,]
+                        MDLabel:
+                            text: 'Funk'
+                            text_color: 'Custom'
+                            font_style: 'Subtitle2'
+                            font_size: '15dp'
+                            text_color: [1,1,1,1]
+                            halign: 'center'
+                            font_name: 'fonts/bold.otf'
+                    MDCard:
+                        id: rock
+                        size_hint_y: None
+                        height: self.parent.height * 0.165
+                        md_bg_color: get_color_from_hex('#1DD05D')
+                        radius: [10,]
+                        MDLabel:
+                            text: 'Rock'
+                            text_color: 'Custom'
+                            font_style: 'Subtitle2'
+                            font_size: '15dp'
+                            text_color: [1,1,1,1]
+                            font_name: 'fonts/bold.otf'
+                            halign: 'center'
+
+                    MDCard:
+                        id: forro
+                        size_hint_y: None
+                        height: self.parent.height * 0.165
+                        md_bg_color: get_color_from_hex('#1DD05D')
+                        radius: [10,]
+                        MDLabel:
+                            text: 'Axé'
+                            text_color: 'Custom'
+                            font_style: 'Subtitle2'
+                            font_size: '15dp'
+                            text_color: [1,1,1,1]
+                            halign: 'center'
+                            font_name: 'fonts/bold.otf'
+                    MDCard:
+                        id: axe
+                        size_hint_y: None
+                        height: self.parent.height * 0.165
+                        md_bg_color: get_color_from_hex('#1DD05D')
+                        radius: [10,]
+                        MDLabel:
+                            text: 'Forró'
+                            text_color: 'Custom'
+                            font_style: 'Subtitle2'
+                            font_size: '15dp'
+                            text_color: [1,1,1,1]
+                            halign: 'center'
+                            font_name: 'fonts/bold.otf'
+                    MDCard:
+                        id: gospel
+                        size_hint_y: None
+                        height: self.parent.height * 0.165
+                        md_bg_color: get_color_from_hex('#1DD05D')
+                        radius: [10,]
+                        MDLabel:
+                            text: 'Gospel'
+                            text_color: 'Custom'
+                            font_style: 'Subtitle2'
+                            font_name: 'fonts/bold.otf'
+                            font_size: '15dp'
+                            text_color: [1,1,1,1]
+                            halign: 'center'
+
+                    MDCard:
+                        id: reggae
+                        size_hint_y: None
+                        height: self.parent.height * 0.165
+                        md_bg_color: get_color_from_hex('#1DD05D')
+                        radius: [10,]
+                        MDLabel:
+                            text: 'Reggae'
+                            text_color: 'Custom'
+                            font_style: 'Subtitle2'
+                            font_size: '15dp'
+                            text_color: [1,1,1,1]
+                            font_name: 'fonts/bold.otf'
+                            halign: 'center'
+                    MDCard:
+                        id: samba
+                        size_hint_y: None
+                        height: self.parent.height * 0.165
+                        md_bg_color: get_color_from_hex('#1DD05D')
+                        radius: [10,]
+                        MDLabel:
+                            text: 'Samba'
+                            text_color: 'Custom'
+                            font_style: 'Subtitle2'
+                            font_size: '15dp'
+                            text_color: [1,1,1,1]
+                            halign: 'center'
+                            font_name: 'fonts/bold.otf'
